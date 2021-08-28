@@ -1,0 +1,2 @@
+# StockApp
+Stock Visualization App
