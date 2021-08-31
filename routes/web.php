@@ -1,18 +1,13 @@
 <?php
 
+use App\Http\Controllers\FetchingApiController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Http\Request;
+
+//fetching from the json api that is providing the stock datas
+
+Route::get('/home',[FetchingApiController::class,'Reading'])->name('home');
+
+Route::get('/', function(){return redirect('/home');});
